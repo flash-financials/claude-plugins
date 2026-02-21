@@ -1,0 +1,9 @@
+{
+  "name": "skill-authoring",
+  "version": "1.0.0",
+  "description": "Guide for creating Claude Code skills and plugins",
+  "author": {
+    "name": "Scott Winkler"
+  },
+  "skills": "./skills/"
+}

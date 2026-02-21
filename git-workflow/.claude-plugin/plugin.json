@@ -1,0 +1,9 @@
+{
+  "name": "git-workflow",
+  "version": "2.0.0",
+  "description": "Git workflow automation — branching, committing, worktrees, and PR creation",
+  "author": {
+    "name": "Scott Winkler"
+  },
+  "commands": "./commands/"
+}

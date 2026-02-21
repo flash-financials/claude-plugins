@@ -1,0 +1,38 @@
+{
+  "name": "local",
+  "owner": {
+    "name": "Scott Winkler"
+  },
+  "plugins": [
+    {
+      "name": "flash",
+      "description": "Flash Financials dev workflow — services, testing, reports, deploy",
+      "version": "1.0.0",
+      "source": "./flash"
+    },
+    {
+      "name": "ssh-tunnel",
+      "description": "SSH tunnel management using a GCP VM as a VPS jump host",
+      "version": "1.0.0",
+      "source": "./ssh-tunnel"
+    },
+    {
+      "name": "skill-authoring",
+      "description": "Guide for creating Claude Code skills and plugins",
+      "version": "1.0.0",
+      "source": "./skill-authoring"
+    },
+    {
+      "name": "git-workflow",
+      "description": "Git workflow commands",
+      "version": "1.0.0",
+      "source": "./git-workflow"
+    },
+    {
+      "name": "terraform",
+      "description": "Terraform deployment workflow — bootstrap, plan, apply, state management",
+      "version": "1.0.0",
+      "source": "./terraform"
+    }
+  ]
+}

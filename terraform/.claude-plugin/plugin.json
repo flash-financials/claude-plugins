@@ -1,0 +1,7 @@
+{
+  "name": "terraform",
+  "version": "1.0.0",
+  "description": "Terraform deployment workflow — bootstrap, plan, apply, state management",
+  "author": { "name": "Scott Winkler" },
+  "commands": "./commands/"
+}

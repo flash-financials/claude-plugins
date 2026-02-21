@@ -1,0 +1,9 @@
+{
+  "name": "flash",
+  "version": "1.0.0",
+  "description": "Flash Financials dev workflow — services, testing, reports, deploy",
+  "author": {
+    "name": "Scott Winkler"
+  },
+  "commands": "./commands/"
+}
