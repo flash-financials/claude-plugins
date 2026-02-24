@@ -38,6 +38,10 @@ If GCP project/region shows "NOT SET" or account shows "NOT AUTHENTICATED", sugg
 
 ## Local Development
 
+### First-time setup
+
+If credential files are missing (`.env`, `token.json`, `client_secret_*.json`), pull secrets first (see Secrets & Auth → Pull secrets), then start the dev environment.
+
 ### Start dev environment
 
 Start Docker + PostgreSQL + server, verify health:
@@ -46,11 +50,17 @@ Start Docker + PostgreSQL + server, verify health:
 colima status >/dev/null 2>&1 || colima start
 docker-compose up -d
 lsof -ti :8080 | xargs kill -9 2>/dev/null || true
+# Source .env if present (auth vars from secrets-get)
+set -a; [ -f .env ] && source .env; set +a
 DATABASE_URL="host=localhost port=6432 user=postgres password=123456 dbname=accounting sslmode=disable" \
 LISTEN_ADDR=":8080" STATIC_DIR="frontend/dist" \
 GSHEET_CREDENTIALS="client_secret_122638021932-l9f9mrud9afam587citrdgrm4emd9l3s.apps.googleusercontent.com.json" \
 GSHEET_FOLDER="1DzVFWHuwz1oS4FyZ388XUzIBWbUHPZxk" \
 CHROME_PROFILE="Work" SEED_ON_EMPTY=true \
+JWT_SECRET="${JWT_SECRET}" \
+GOOGLE_CLIENT_ID="${GOOGLE_CLIENT_ID}" \
+GOOGLE_CLIENT_SECRET="${GOOGLE_CLIENT_SECRET}" \
+ADMIN_EMAIL="${ADMIN_EMAIL}" \
 go run ./cmd/server > /tmp/accounting-server.log 2>&1 &
 ```
 
@@ -66,7 +76,7 @@ Do NOT stop Docker/PostgreSQL unless explicitly asked.
 
 ### Restart
 
-Kill server → ensure Docker + DB running → start server fresh → verify. Same commands as start, preceded by the kill.
+Kill server → ensure Docker + DB running → source `.env` if present (`set -a; [ -f .env ] && source .env; set +a`) → start server fresh (with all env vars including auth: `JWT_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `ADMIN_EMAIL`) → verify.
 
 ### Check status
 
@@ -255,7 +265,10 @@ Pattern: `gcloud secrets create <NAME> --project=<PROJECT> 2>/dev/null || true` 
 
 ### Pull secrets (GCP → local)
 
-Fetch from Secret Manager, parse AccuBuild DSN into individual vars, write `.env`, `token.json`, `client_secret.json`.
+Fetch from Secret Manager, parse AccuBuild DSN into individual vars. Write credential files:
+- `.env` ← parsed env vars
+- `token.json` ← gsheet-token secret
+- `client_secret_122638021932-l9f9mrud9afam587citrdgrm4emd9l3s.apps.googleusercontent.com.json` ← gsheet-credentials secret
 
 ---
 

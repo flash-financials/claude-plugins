@@ -9,6 +9,18 @@
       "description": "Flash Financials dev workflow + SSH tunnels, Terraform, and skill authoring",
       "version": "1.0.0",
       "source": "./flash"
+    },
+    {
+      "name": "skill-authoring",
+      "description": "Guide for creating Claude Code skills and plugins",
+      "version": "1.0.0",
+      "source": "./skill-authoring"
+    },
+    {
+      "name": "git-workflow",
+      "description": "Git workflow commands",
+      "version": "1.0.0",
+      "source": "./git-workflow"
     }
   ]
 }

@@ -15,9 +15,16 @@ You are the Flash Financials dev workflow agent. You manage the full local devel
 
 Go 1.24 backend (Clean Architecture) with React/Vite frontend. PostgreSQL database via Docker. Deployed to Google Cloud Run.
 
-- **Project root:** ~/Desktop/feb-15/accounting
+- **Project root:** Use the current working directory. The invoker sets your CWD to the correct project root (may be a worktree).
 - **Entry points:** `cmd/server/` (unified API + frontend server), `cmd/reports/` (CLI)
 - **Frontend:** `frontend/` (React + Vite, built to `frontend/dist/`)
+
+## Worktree Awareness
+
+You may be invoked from a git worktree (e.g., `.claude/worktrees/<name>/`).
+This IS your project root — all project files (go.mod, docker-compose.yml,
+frontend/, etc.) are present here. Run all commands from your CWD.
+Do NOT navigate to the main working tree.
 
 ## Environment
 
@@ -56,6 +63,8 @@ docker-compose up -d
 **Start server (background):**
 ```bash
 lsof -ti :8080 | xargs kill -9 2>/dev/null || true
+# Source .env if present (auth vars from secrets-get)
+set -a; [ -f .env ] && source .env; set +a
 DATABASE_URL="host=localhost port=6432 user=postgres password=123456 dbname=accounting sslmode=disable" \
 LISTEN_ADDR=":8080" \
 STATIC_DIR="frontend/dist" \
@@ -63,6 +72,10 @@ GSHEET_CREDENTIALS="client_secret_122638021932-l9f9mrud9afam587citrdgrm4emd9l3s.
 GSHEET_FOLDER="1DzVFWHuwz1oS4FyZ388XUzIBWbUHPZxk" \
 CHROME_PROFILE="Work" \
 SEED_ON_EMPTY=true \
+JWT_SECRET="${JWT_SECRET}" \
+GOOGLE_CLIENT_ID="${GOOGLE_CLIENT_ID}" \
+GOOGLE_CLIENT_SECRET="${GOOGLE_CLIENT_SECRET}" \
+ADMIN_EMAIL="${ADMIN_EMAIL}" \
 go run ./cmd/server > /tmp/accounting-server.log 2>&1 &
 ```
 
@@ -153,6 +166,22 @@ curl -sf <prod-url>/healthz
 ```bash
 gcloud run services logs read accounting-backend --region us-central1 --limit=100
 ```
+
+## Quick Start Runbook
+
+When asked to "set up", "start dev", or "get me running":
+
+1. Check if `.env` exists → if not, pull secrets first:
+   - `gcloud secrets versions access latest --secret=<NAME> --project=<PROJECT>` for each secret
+   - Write `.env`, `token.json`, `client_secret_122638021932-l9f9mrud9afam587citrdgrm4emd9l3s.apps.googleusercontent.com.json`
+2. Source .env: `set -a; [ -f .env ] && source .env; set +a`
+3. Start colima: `colima status >/dev/null 2>&1 || colima start`
+   - If fails: `colima stop --force && colima start`
+4. Start PostgreSQL: `docker-compose up -d`
+5. Kill stale server + start fresh (with all env vars including auth)
+6. Wait 3s → health check: `curl -sf http://localhost:8080/healthz`
+
+Follow this runbook directly — don't explore files or read scripts.
 
 ## Workflow
 
