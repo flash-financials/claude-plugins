@@ -44,7 +44,7 @@ Warn the user that this only removes it from state management, the actual resour
 
 **`migrate`** — Migrate local state to remote GCS backend:
 
-1. If config shows "No config found", tell the user to run `/terraform:bootstrap` first and stop.
+1. If config shows "No config found", tell the user to run `/flash:tf-bootstrap` first and stop.
 2. If "No local state" and "No backend block", nothing to migrate. Stop.
 3. If backend is already configured and no local state, already migrated. Stop.
 4. Read config to get bucket name.

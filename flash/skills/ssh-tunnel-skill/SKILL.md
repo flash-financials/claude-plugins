@@ -55,7 +55,7 @@ If no config file exists, ask the user for all 6 parameters at once using AskUse
 
 4. If verification succeeds, report success and show the user:
    - The local endpoint: `localhost:<LOCAL_PORT>`
-   - How to close the tunnel: `kill $(lsof -t -i :<LOCAL_PORT> -sTCP:LISTEN)`
+   - How to close the tunnel: `kill $(lsof -t -i :<LOCAL_PORT> -sTCP:LISTEN)` or `/flash:tunnel-close`
 
 5. If no config file existed, offer to save the configuration to `.tunnel-config.json` in the project root for future use.
 

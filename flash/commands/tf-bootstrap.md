@@ -93,4 +93,4 @@ Show the user:
 - Admin project ID
 - State bucket name
 - Config file location
-- Next steps: "Run `/terraform:init` in any Terraform project to configure remote state"
+- Next steps: "Run `/flash:tf-init` in any Terraform project to configure remote state"

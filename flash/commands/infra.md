@@ -24,9 +24,9 @@ Arguments: $ARGUMENTS
 
 If Terraform is not initialized (context shows "no" for initialized), run:
 ```bash
-cd deploy/terraform && terraform init -backend-config="bucket=<PROJECT>-terraform-state"
+cd deploy/terraform && terraform init
 ```
-Where `<PROJECT>` is the GCP project from context.
+The backend bucket (`infra-admin-tfstate`) is hardcoded in `main.tf`.
 
 **All terraform commands run from `deploy/terraform`.**
 

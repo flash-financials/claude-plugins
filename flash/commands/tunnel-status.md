@@ -24,5 +24,5 @@ lsof -i :<PORT> -sTCP:LISTEN
 
 ### Step 3: Report
 
-- If a process is found: report the tunnel is **active**, show the PID and process details. Remind the user they can close it with `/ssh-tunnel:close <PORT>`.
-- If no process is found: report **no active tunnel** on that port. Suggest `/ssh-tunnel:open` to create one.
+- If a process is found: report the tunnel is **active**, show the PID and process details. Remind the user they can close it with `/flash:tunnel-close <PORT>`.
+- If no process is found: report **no active tunnel** on that port. Suggest `/flash:tunnel-open` to create one.

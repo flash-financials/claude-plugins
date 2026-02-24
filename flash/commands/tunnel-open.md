@@ -52,7 +52,7 @@ lsof -i :<LOCAL_PORT> -sTCP:LISTEN
 
 Report success or failure. On success, show:
 - Local endpoint: `localhost:<LOCAL_PORT>`
-- To close: run `/ssh-tunnel:close <LOCAL_PORT>` or `kill $(lsof -t -i :<LOCAL_PORT> -sTCP:LISTEN)`
+- To close: run `/flash:tunnel-close <LOCAL_PORT>` or `kill $(lsof -t -i :<LOCAL_PORT> -sTCP:LISTEN)`
 
 ### Step 6: Save Config
 

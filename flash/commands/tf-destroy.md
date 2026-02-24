@@ -15,7 +15,7 @@ Destroy all Terraform-managed infrastructure with explicit confirmation.
 
 ### Step 1: Check Prerequisites
 
-- If "NOT INITIALIZED", tell the user to run `/terraform:init` first and stop.
+- If "NOT INITIALIZED", tell the user to run `/flash:tf-init` first and stop.
 
 ### Step 2: Preview Destruction
 
@@ -37,4 +37,4 @@ terraform destroy -auto-approve
 
 ### Step 5: Report
 
-Report what was destroyed. Remind the user that the state file in the remote backend still exists (for audit purposes) and can be cleaned up with `/terraform:state rm` if desired.
+Report what was destroyed. Remind the user that the state file in the remote backend still exists (for audit purposes) and can be cleaned up with `/flash:tf-state rm` if desired.

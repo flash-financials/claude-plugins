@@ -15,7 +15,7 @@ Run `terraform plan` to preview infrastructure changes.
 
 ### Step 1: Check Prerequisites
 
-- If "NOT INITIALIZED", tell the user to run `/terraform:init` first and stop.
+- If "NOT INITIALIZED", tell the user to run `/flash:tf-init` first and stop.
 - If "No .tf files found", tell the user this doesn't look like a Terraform project and stop.
 
 ### Step 2: Run Plan

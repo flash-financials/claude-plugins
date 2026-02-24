@@ -18,7 +18,7 @@ Initialize Terraform in the current directory with remote GCS backend.
 
 ### Step 1: Check Prerequisites
 
-- If config shows "No config found", tell the user to run `/terraform:bootstrap` first and stop.
+- If config shows "No config found", tell the user to run `/flash:tf-bootstrap` first and stop.
 - If no `.tf` files exist in the current directory, tell the user this doesn't look like a Terraform project and stop.
 
 ### Step 2: Check Backend Configuration

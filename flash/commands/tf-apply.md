@@ -15,7 +15,7 @@ Apply Terraform changes with user confirmation.
 
 ### Step 1: Check Prerequisites
 
-- If "NOT INITIALIZED", tell the user to run `/terraform:init` first and stop.
+- If "NOT INITIALIZED", tell the user to run `/flash:tf-init` first and stop.
 
 ### Step 2: Preview Changes
 

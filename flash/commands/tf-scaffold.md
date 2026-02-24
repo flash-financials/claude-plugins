@@ -15,7 +15,7 @@ Create a new Terraform project directory with remote GCS backend pre-configured.
 
 ### Step 1: Check Prerequisites
 
-- If config shows "No config found", tell the user to run `/terraform:bootstrap` first and stop.
+- If config shows "No config found", tell the user to run `/flash:tf-bootstrap` first and stop.
 
 ### Step 2: Get Project Name
 
