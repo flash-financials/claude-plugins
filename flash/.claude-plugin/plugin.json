@@ -1,9 +1,10 @@
 {
   "name": "flash",
   "version": "1.0.0",
-  "description": "Flash Financials dev workflow + SSH tunnels, Terraform, and skill authoring",
+  "description": "Flash Financials dev workflow + SSH tunnels and Terraform",
   "author": {
     "name": "Scott Winkler"
   },
+  "commands": "./commands/",
   "skills": "./skills/"
 }

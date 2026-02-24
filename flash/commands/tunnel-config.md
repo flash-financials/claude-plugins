@@ -1,5 +1,4 @@
 ---
-name: tunnel-config
 description: View or edit the SSH tunnel configuration for this project
 argument-hint: "[key value]"
 allowed-tools: Bash(pwd), Bash(cat *), Read, Write, AskUserQuestion

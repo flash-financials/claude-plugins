@@ -1,5 +1,4 @@
 ---
-name: tunnel-status
 description: Check if an SSH tunnel is active on a given port
 argument-hint: "[port]"
 allowed-tools: Bash(lsof *), Bash(cat *), Read

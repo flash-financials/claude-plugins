@@ -1,5 +1,4 @@
 ---
-name: tunnel-open
 description: Open an SSH tunnel through a GCP VPS to a remote endpoint
 argument-hint: "[project vps zone local_port remote_host remote_port]"
 allowed-tools: Bash(gcloud *), Bash(lsof *), Bash(kill *), Bash(brew *), Bash(which *), Bash(pwd), Bash(cat *), Read, Write, AskUserQuestion

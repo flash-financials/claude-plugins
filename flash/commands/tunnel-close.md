@@ -1,5 +1,4 @@
 ---
-name: tunnel-close
 description: Close an active SSH tunnel on a given port
 argument-hint: "[port]"
 allowed-tools: Bash(lsof *), Bash(kill *), Bash(cat *), Read
