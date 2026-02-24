@@ -15,7 +15,7 @@ description: Flash Financials secrets and authentication — check GCP auth stat
 
 - Registry: `<REGION>-docker.pkg.dev/<PROJECT>/accounting` (for Docker auth)
 - Credential files: `.env`, `token.json`, `client_secret_*.json`
-- Required secrets: `jwt-secret`, `google-client-id`, `google-client-secret`, `admin-email`, `accubuild-dsn`, `gsheet-credentials`, `gsheet-token`, `db-password`
+- Required secrets: `jwt-secret`, `encryption-key`, `google-client-id`, `google-client-secret`, `admin-email`, `allowed-domains`, `allowed-emails`, `accubuild-dsn`, `gsheet-credentials`, `gsheet-token`, `db-password`
 
 ---
 
@@ -29,7 +29,7 @@ Check: account (`gcloud auth list`), project (`gcloud config get-value project`)
 
 ## Check Secrets
 
-Required secrets: `jwt-secret`, `google-client-id`, `google-client-secret`, `admin-email`, `accubuild-dsn`, `gsheet-credentials`, `gsheet-token`, `db-password`. Check each with `gcloud secrets versions list <NAME> --project <PROJECT> --limit 1`.
+Required secrets: `jwt-secret`, `encryption-key`, `google-client-id`, `google-client-secret`, `admin-email`, `allowed-domains`, `allowed-emails`, `accubuild-dsn`, `gsheet-credentials`, `gsheet-token`, `db-password`. Check each with `gcloud secrets versions list <NAME> --project <PROJECT> --limit 1`.
 
 ---
 
@@ -39,9 +39,12 @@ Read `.env` and construct AccuBuild DSN from individual vars. Map:
 | Local | Secret |
 |---|---|
 | `$JWT_SECRET` | `jwt-secret` |
+| `$ENCRYPTION_KEY` | `encryption-key` |
 | `$GOOGLE_CLIENT_ID` | `google-client-id` |
 | `$GOOGLE_CLIENT_SECRET` | `google-client-secret` |
 | `$ADMIN_EMAIL` | `admin-email` |
+| `$ALLOWED_DOMAINS` | `allowed-domains` |
+| `$ALLOWED_EMAILS` | `allowed-emails` |
 | Constructed DSN | `accubuild-dsn` |
 | `client_secret.json` | `gsheet-credentials` |
 | `token.json` | `gsheet-token` |
