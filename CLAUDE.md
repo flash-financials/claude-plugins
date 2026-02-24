@@ -1,8 +1,20 @@
 ## Git Workflow
 
-Always use worktrees when starting new work. This keeps the main working tree clean and allows safe multi-tasking.
+**Never push directly to main.** Always use worktrees and feature branches.
 
-- **Start:** Use the `superpowers:using-git-worktrees` skill to create an isolated worktree workspace
-- **Finish:** Use the `superpowers:finishing-a-development-branch` skill to merge, PR, keep, or discard the branch
+- **Start:** `git worktree add .worktrees/<name> -b feature/<name>` or use `superpowers:using-git-worktrees`
+- **Finish:** Push branch, open PR via `gh pr create`, merge to main. Or use `superpowers:finishing-a-development-branch`
+- **Cleanup:** `git worktree remove .worktrees/<name>` after merge
 
-Worktree directory preference: `.worktrees/` (project-local, hidden)
+Worktree directory: `.worktrees/` (gitignored)
+
+## Plugin Cache Sync
+
+After editing source files, copy them to the local cache for immediate effect:
+
+```bash
+cp -r flash/agents/*.md ~/.claude/plugins/cache/local/flash/1.0.0/agents/
+cp -r flash/skills/*.md ~/.claude/plugins/cache/local/flash/1.0.0/skills/
+```
+
+Cache changes are local-only. Merge PR to main to persist across machines.
