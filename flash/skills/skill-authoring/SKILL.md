@@ -92,9 +92,9 @@ Plugins package skills (plus agents, hooks, MCP servers) for sharing. Skills get
 my-plugin/
 ├── .claude-plugin/
 │   └── plugin.json      # Manifest (only this goes in .claude-plugin/)
-├── commands/             # Slash commands as .md files
-│   └── deploy.md
-├── skills/               # Auto-triggerable skills
+├── skills/               # All skills (user-invocable and auto-triggered)
+│   ├── deploy/
+│   │   └── SKILL.md
 │   └── code-review/
 │       └── SKILL.md
 ├── agents/               # Custom subagents
@@ -111,8 +111,7 @@ my-plugin/
   "version": "1.0.0",
   "description": "What this plugin does",
   "author": { "name": "Your Name" },
-  "skills": "./skills/",
-  "commands": "./commands/"
+  "skills": "./skills/"
 }
 ```
 
