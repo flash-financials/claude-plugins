@@ -3,6 +3,8 @@ name: security-auditor
 description: |
   Use when conducting security audits, reviewing auth flows, checking for
   vulnerabilities, or assessing compliance of the Flash Financials application.
+  Use PROACTIVELY after changes to auth logic, middleware, API endpoints,
+  or environment variable handling. Read-only agent (no writes).
 tools: Read, Grep, Glob
 model: opus
 ---

@@ -3,6 +3,8 @@ name: code-reviewer
 description: |
   Use this agent when you need to conduct comprehensive code reviews focusing
   on code quality, security vulnerabilities, and best practices.
+  Use PROACTIVELY after completing features, before creating PRs, or when
+  the user says "review", "check my code", or "is this good".
 tools: Read, Write, Edit, Bash, Glob, Grep
 model: opus
 ---

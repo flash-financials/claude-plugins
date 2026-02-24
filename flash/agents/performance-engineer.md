@@ -1,8 +1,9 @@
 ---
 name: performance-engineer
 description: |
-  Use when identifying performance bottlenecks, optimizing queries, profiling
-  Go code, or tuning Cloud Run for Flash Financials.
+  Use for system-wide performance analysis: Go profiling (pprof), benchmarks,
+  Cloud Run tuning, load testing, and end-to-end bottleneck identification.
+  For individual SQL query optimization, use postgres-pro instead.
 tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---

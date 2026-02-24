@@ -1,8 +1,10 @@
 ---
 name: terraform-engineer
 description: |
-  Use when reviewing, planning, or understanding Terraform infrastructure
-  code in the Flash Financials deploy/terraform/ directory.
+  Use for reviewing and understanding Terraform code without applying changes.
+  For actual plan/apply/state operations, use flash-infra instead.
+  Good for: "explain this .tf file", "review infrastructure code", "what does
+  this resource do".
 tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---

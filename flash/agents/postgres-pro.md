@@ -1,8 +1,9 @@
 ---
 name: postgres-pro
 description: |
-  Use when optimizing PostgreSQL queries, tuning configuration, debugging
-  database issues, or managing schema for Flash Financials.
+  Use for PostgreSQL-specific work: query optimization (EXPLAIN), index design,
+  schema changes, migrations, GORM model updates, database debugging, and
+  configuration tuning. Use performance-engineer for system-wide profiling.
 tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---

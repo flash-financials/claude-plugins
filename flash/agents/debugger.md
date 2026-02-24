@@ -3,6 +3,9 @@ name: debugger
 description: |
   Use when diagnosing bugs, analyzing error logs, tracing failures, or
   identifying root causes in the Flash Financials application.
+  Trigger when: tests fail, errors appear in logs, something "doesn't work",
+  or the user reports unexpected behavior. For root cause analysis, not fixes
+  (hand off to golang-pro or react-specialist for implementation).
 tools: Read, Write, Edit, Bash, Glob, Grep
 model: opus
 ---

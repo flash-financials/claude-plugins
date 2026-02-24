@@ -1,8 +1,10 @@
 ---
 name: golang-pro
 description: |
-  Use when building or debugging Go code — idiomatic patterns, concurrency,
-  performance optimization, and testing for the Flash Financials backend.
+  Use when building or modifying Go backend code — new features, refactors,
+  idiomatic patterns, concurrency, and testing for the Flash Financials backend.
+  This is the primary agent for any Go implementation work. Use debugger for
+  root cause analysis; use performance-engineer for system-wide profiling.
 tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---

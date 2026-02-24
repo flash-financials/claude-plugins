@@ -1,8 +1,9 @@
 ---
 name: react-specialist
 description: |
-  Use when building or debugging the Flash Financials React frontend —
-  components, state management, performance, and Vite/TypeScript tooling.
+  Use for any React/TypeScript frontend work — building components, fixing
+  frontend bugs, state management, styling, and Vite tooling. This is the
+  primary agent for all frontend/ directory changes.
 tools: Read, Write, Edit, Bash, Glob, Grep
 model: sonnet
 ---
