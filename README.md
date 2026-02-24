@@ -8,7 +8,6 @@ Custom Claude Code plugins for Flash Financials development workflows.
 |--------|-------------|
 | **flash** | Full dev workflow — services, testing, reports, deploy, production ops, infrastructure |
 | **skill-authoring** | Guide for creating Claude Code skills and plugins |
-| **git-workflow** | Git worktree commands for feature branch isolation |
 
 ## Installation
 
@@ -30,7 +29,6 @@ This registers the repo as a directory-based marketplace named `local` and creat
 
 ```bash
 claude plugins install flash@local
-claude plugins install git-workflow@local
 claude plugins install skill-authoring@local
 ```
 
@@ -40,7 +38,6 @@ Each install copies the plugin into `~/.claude/plugins/cache/local/<name>/<versi
 
 ```bash
 claude plugins enable flash@local
-claude plugins enable git-workflow@local
 claude plugins enable skill-authoring@local
 ```
 
@@ -116,9 +113,6 @@ claude-plugins/
 │   ├── agents/               # Subagents (auto-discovered)
 │   ├── commands/             # Slash commands
 │   └── skills/               # Skills (auto-triggered)
-├── git-workflow/             # Git worktree commands
-│   ├── .claude-plugin/
-│   └── commands/
 └── skill-authoring/          # Skill authoring guide
     ├── .claude-plugin/
     └── skills/
